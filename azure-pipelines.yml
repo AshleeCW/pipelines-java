@@ -20,3 +20,16 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: SynopsysDetectTask@8
+  inputs:
+    Products: BD
+    BlackDuckService: 'us1a-sup-hub-williamson-test2.nprd.sig.synopsys.com'
+    DetectFolder: .
+    DetectArguments: |
+      --blackduck.url="https://us1a-sup-hub-williamson-test2.nprd.sig.synopsys.com/"
+      --blackduck.api.token="MzkwNTM5ZWQtZGRlYi00NGZkLWJkN2MtMTdkN2I4ZjU2M2ZkOjI4ZjhjYzc5LWNjZmYtNGRkZC1iMTBlLWUzZWJiZjRiMTEwYw=="
+      --detect.project.name="ado-test"
+      --detect.project.version.name="test1"
+      --detect.detector.search.depth="10"
+    DetectVersion: 'latest'
