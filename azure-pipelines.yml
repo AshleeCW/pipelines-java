@@ -23,7 +23,8 @@ steps:
 - task: SynopsysDetectTask@8
   inputs:
     BlackDuckService: 'ec2-bd'
-    DetectArguments: |
+    DetectArguments: |  
+      --blackduck.trust.cert=true
       --detect.project.name="ado-test"
       --detect.project.version.name="test1"
       --detect.detector.search.depth="10"
