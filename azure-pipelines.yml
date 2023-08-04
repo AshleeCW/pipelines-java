@@ -20,15 +20,10 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
 - task: SynopsysDetectTask@8
   inputs:
-    Products: BD
-    BlackDuckService: 'ec2-18-220-53-153.us-east-2.compute.amazonaws.com'
-    DetectFolder: .
+    BlackDuckService: 'ec2-bd'
     DetectArguments: |
-      --blackduck.url="https://ec2-18-220-53-153.us-east-2.compute.amazonaws.com/"
-      --blackduck.api.token="ZDg1NmE2YmUtZWVhMy00YzlkLWIyOTktZjMzY2M2OTBhNDY0OjdmYTUyZGY5LWExNDctNDYxNi04NDZlLTljNWU0ZWYzMDhkNQ=="
       --detect.project.name="ado-test"
       --detect.project.version.name="test1"
       --detect.detector.search.depth="10"
