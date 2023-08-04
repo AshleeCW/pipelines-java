@@ -28,4 +28,4 @@ steps:
       --detect.project.name="ado-test"
       --detect.project.version.name="test1"
       --detect.detector.search.depth="10"
-    DetectVersion: 'latest'
+    DetectVersion: '8.9.0'
