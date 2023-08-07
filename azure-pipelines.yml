@@ -26,6 +26,7 @@ steps:
     DetectArguments: |  
       --blackduck.trust.cert=true
       --detect.project.name="ado-test"
+      --detect.parallel.processors="0"
       --detect.project.version.name="test1"
       --detect.detector.search.depth="10"
     DetectVersion: '8.9.0'
